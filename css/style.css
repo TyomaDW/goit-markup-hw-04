@@ -120,16 +120,15 @@ body {
   align-items: center;
 }
 
-.header-align {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
 .header-item:not(:last-child) {
   margin-right: 50px;
 }
 
 .site-nav .link {
+  display: inline-block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--title-text-color);
 
   letter-spacing: 0.02em;
@@ -146,6 +145,10 @@ body {
 }
 
 .auth-nav .list {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: inline-block;
+
   color: var(--lead-text-color);
 
   letter-spacing: 0.02em;
