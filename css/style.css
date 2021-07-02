@@ -12,6 +12,9 @@
   --card-shadow-portfolio: rgba(238, 238, 238, 1);
   --button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  --icon-color: rgba(175, 177, 184, 1);
+  --portfolio-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 h1,
@@ -199,6 +202,7 @@ body {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -228,7 +232,7 @@ body {
 .button-nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 34px;
+  margin-bottom: 50px;
 }
 
 .button-align {
@@ -251,7 +255,8 @@ body {
 
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.62;
+  line-height: 1.63;
+  letter-spacing: 0.03em;
   cursor: pointer;
   font-family: inherit;
   border: none;
@@ -305,6 +310,15 @@ body {
   line-height: 1.71;
 }
 
+.features-icon {
+  background: var(--secondary-background-color);
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+}
+
 /* Work */
 
 .work-section {
@@ -342,18 +356,21 @@ body {
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  margin-right: calc(-1 * 30px);
 }
 
 .team-item {
   flex-basis: calc((100% - 120px) / 4);
-  margin-left: 30px;
-  margin-top: 30px;
+  margin-right: 30px;
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-border {
   display: block;
+  text-align: center;
   padding: 30px 0;
   box-shadow: var(--card-shadow);
   border-radius: 4px;
@@ -370,14 +387,69 @@ body {
 
 .team-description {
   text-align: center;
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+.team-block-icon {
+  color: var(--icon-color);
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.team-block-icon:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.team-block-icon:hover,
+.team-block-icon:focus {
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+}
+
+.team-icon {
+  fill: currentColor;
+}
+
+/* Clients */
+
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * 30px);
+}
+
+.clients-item {
+  flex-basis: calc(100% / 6 - 30px);
+  margin-right: 30px;
+}
+
+.client-logo {
+  fill: currentColor;
+}
+
+.client-link {
+  color: var(--icon-color);
+  display: inline-block;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  padding: 16px 32px;
+}
+
+.client-link:hover,
+.client-link:focus {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 /* Footer */
 
 .footer-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-
   background-color: var(--background-color);
 }
 
@@ -407,6 +479,53 @@ body {
 
 .contacts {
   color: var(--footer-text-color);
+}
+
+.footer-blocks {
+  display: flex;
+}
+
+.footer-contacts {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-right: 70px;
+}
+
+.footer-join {
+  padding-top: 72px;
+  color: var(--primary-white-color);
+}
+
+.join-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.join-link {
+  color: var(--primary-white-color);
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+}
+
+.join-link:not(:last-of-type) {
+  margin-right: 10px;
+}
+.join-link:hover,
+.join-link:focus {
+  background-color: var(--accent-color);
+}
+
+.join-icon {
+  fill: currentColor;
 }
 
 /* Projects */
@@ -443,7 +562,8 @@ body {
   color: var(--lead-text-color);
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.18;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
 }
 
 .projects-border {
@@ -451,4 +571,13 @@ body {
   border-right: 1px solid var(--card-shadow-portfolio);
   border-left: 1px solid var(--card-shadow-portfolio);
   border-bottom: 1px solid var(--card-shadow-portfolio);
+}
+
+.project-bg {
+  display: inline-block;
+}
+
+.project-bg:hover,
+.project-bg:hover {
+  box-shadow: var(--portfolio-shadow);
 }
